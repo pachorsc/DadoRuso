@@ -1,6 +1,4 @@
-
 package clases;
-
 
 public class PC extends Jugador{
     
@@ -8,10 +6,11 @@ public class PC extends Jugador{
         super(nombre,vidas);
     }
     
+    @Override
     public void turno(boolean puedeUsarObjeto){
         if(puedeUsarObjeto){
             if(devolverNumEspaciosOcupados(inventario) != 0){               
-                int ale=(int)Math.random()*3;
+                int ale= randomInt(0, super.getInventario().length - 1);
                 
                 for (int i = 0; i < inventario.length; i++) {
                     System.out.println("Objeto nº" + (i+1) + ": " + inventario[i]);
@@ -31,8 +30,4 @@ public class PC extends Jugador{
             System.out.println("El jugador " + nombre + " no tiene objetos para usar.");
         }
     }
-    
-        
-    
-    
 }
