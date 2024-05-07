@@ -1,13 +1,12 @@
-
 package clases;
-
 
 public class Humano extends Jugador{
     
     public Humano(String nombre, int vidas){
         super(nombre,vidas);
     }
-    
+
+    @Override
     public void turno(boolean puedeUsarObjeto){
         if(puedeUsarObjeto){
             if(devolverNumEspaciosOcupados(inventario) != 0){
@@ -31,6 +30,4 @@ public class Humano extends Jugador{
             System.out.println("El jugador " + nombre + " no tiene objetos para usar.");
         }
     }
-    
-    
 }
