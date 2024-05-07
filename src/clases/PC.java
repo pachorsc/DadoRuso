@@ -20,7 +20,7 @@ public class PC extends Jugador{
                 main.Main.objetoAUsar = elegido;               
             }
         }else{
-            System.out.println("El jugador " + nombre + " no tiene objetos para usar.");
+            System.out.println(">El jugador " + nombre + " no tiene objetos para usar.");
         }
     }
 }

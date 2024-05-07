@@ -29,7 +29,7 @@ public abstract class Jugador extends FlojerasUtility{
                 }
             }
         }else{
-            System.out.println("El jugador " + nombre + " no puede recibir más objetos.");
+            System.out.println(">El jugador " + nombre + " no puede recibir más objetos.");
         }
     }
     
