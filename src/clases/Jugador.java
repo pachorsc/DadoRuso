@@ -34,30 +34,6 @@ public abstract class Jugador extends FlojerasUtility{
     }
     
     public abstract void turno(boolean puedeUsarObjeto);
-    //ESTO ES PARA HUMANO
-    /*{
-        if(puedeUsarObjeto){
-            if(devolverNumEspaciosOcupados(inventario) != 0){
-                int opcion;
-                System.out.println("Elige el objeto a usar:");
-                for (int i = 0; i < inventario.length; i++) {
-                    System.out.println("Objeto nº" + (i+1) + ": " + inventario[i]);
-                }
-                do{
-                    opcion = pedirInt(false);
-                    opcion--;
-                }while(opcion < 0 || opcion > inventario.length);
-                Objeto elegido = inventario[opcion];
-                //Elimino el objeto del inventario
-                inventario[opcion] = null;
-                //Reordeno el array para evitar posiciones nulas desperdigadas
-                defragmentarArray(inventario);
-                main.Main.objetoAUsar = elegido;
-            }
-        }else{
-            System.out.println("El jugador " + nombre + " no tiene objetos para usar.");
-        }
-    }*/
     
     //Getters y setters
     public String getNombre() {
