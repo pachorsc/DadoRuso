@@ -63,7 +63,6 @@ public class Main extends FlojerasUtility {
                 
                 
                 
-                
             }else{
                 //Turno bot
                 if (turnj1>=5 && turnj1<=6) {    
