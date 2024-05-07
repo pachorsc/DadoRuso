@@ -33,8 +33,16 @@ public abstract class Jugador extends FlojerasUtility{
         }
     }
     
-    public abstract void turno(boolean puedeUsarObjeto);
+    public void aumentarVida(){
+        vidas++;
+    }
     
+    public void dsiminuirVida(){
+        vidas--;
+    }
+    
+    public abstract void turno(boolean puedeUsarObjeto);
+
     //Getters y setters
     public String getNombre() {
         return nombre;
