@@ -27,7 +27,7 @@ public class Main extends FlojerasUtility {
         "'---'                       '---'                              `---'       `--`----'                              \n" +
         "                                                                                                                  ";
         
-        //Mínimo recomendado de vidas = 10
+        //Mínimo recomendado de vidas = 9
         System.out.println("Bienvenido al Juego del  DADO RUSO");
         System.out.println("Dime tu nombre");
         String nom = pedirTexto();
@@ -40,15 +40,14 @@ public class Main extends FlojerasUtility {
             
             int turnj1 = J1.tirarDado();
             int turnbot = bot.tirarDado();
-            System.out.println("Tu dado ha salido "+turnj1+" El dado del Acolito del aguacate ha slido "+turnbot);
+            System.out.println("Tu dado ha sacado un "+turnj1+" El dado de " + bot.getNombre() + " ha sacado "+turnbot);
             
-            if (turnj1>turnbot) {
-                
-                //turno jugador
-                System.out.println("Haz sacado más que el bot, tienes el turno");
+            if(turnj1>turnbot){
+                //Turno jugador
+                System.out.println("Has sacado más que el bot, tienes el turno.");
                 
                 if (turnj1>=5 && turnj1<=6) {   
-                    System.out.println("Tu dado ha sido por encima de 4 te ganas un objeto");
+                    System.out.println("Tu dado ha sido por encima de 4, te ganas un objeto");
                     J1.aniadirObjeto(generarObjeto());
                 }
                 
@@ -56,8 +55,8 @@ public class Main extends FlojerasUtility {
                     J1.turno(true);
                 } else J1.turno(false);
                 
-            } else {
-                //turno bot
+            }else{
+                //Turno bot
                 if (turnj1>=5 && turnj1<=6) {    
                     bot.aniadirObjeto(generarObjeto());
                 }
@@ -67,6 +66,7 @@ public class Main extends FlojerasUtility {
                 } else bot.turno(false);
                 
             }
+            System.out.println("Ronda terminada - Presione Enter para pasar a la siguiente");
             sc.nextLine();
         }
     }
