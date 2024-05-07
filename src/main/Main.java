@@ -36,9 +36,7 @@ public class Main extends FlojerasUtility {
         
         PC bot = new PC("Acólito del aguacate", VIDAS);
         
-        boolean ganar = true;
-        while(ganar){
-            
+        while(true){
             objetoAUsar = null;
             
             int turnj1 = J1.tirarDado();
@@ -56,7 +54,7 @@ public class Main extends FlojerasUtility {
                 
                 if (devolverNumEspaciosOcupados(J1.getInventario()) > 0) {
                     J1.turno(true);
-                    usarobj(objetoAUsar,J1,bot);
+                    usarObj(objetoAUsar,J1,bot);
                 } else J1.turno(false);
                 
                 bot.dsiminuirVida();                        
@@ -68,7 +66,7 @@ public class Main extends FlojerasUtility {
                 
                 if (devolverNumEspaciosOcupados(J1.getInventario()) > 0) {
                     bot.turno(true);
-                    usarobj(objetoAUsar,bot,J1);
+                    usarObj(objetoAUsar,bot,J1);
                 } else bot.turno(false);
                 
                 J1.dsiminuirVida();
@@ -83,6 +81,14 @@ public class Main extends FlojerasUtility {
             }
             System.out.println("Ronda terminada - Presione Enter para pasar a la siguiente");
             sc.nextLine();
+        }
+        
+        if(J1.getVidas() <= 0){
+            System.out.println("Ha ganado el bot " + bot.getNombre());
+        }
+        
+        if(bot.getVidas() <= 0){
+            System.out.println("Ha ganado el jugador " + J1.getNombre());
         }
     }
     
@@ -100,7 +106,8 @@ public class Main extends FlojerasUtility {
         
         return o;
     }
-    public static void usarobj(Objeto x, Jugador y, Jugador z){
+    
+    public static void usarObj(Objeto x, Jugador y, Jugador z){
         if (x == null) {
             
         } else if (x.getNombre() == TipoObjeto.AGUACATE) {
