@@ -33,7 +33,9 @@ public abstract class Jugador extends FlojerasUtility{
         }
     }
     
-    public void turno(boolean puedeUsarObjeto){
+    public abstract void turno(boolean puedeUsarObjeto);
+    //ESTO ES PARA HUMANO
+    /*{
         if(puedeUsarObjeto){
             if(devolverNumEspaciosOcupados(inventario) != 0){
                 int opcion;
@@ -55,7 +57,7 @@ public abstract class Jugador extends FlojerasUtility{
         }else{
             System.out.println("El jugador " + nombre + " no tiene objetos para usar.");
         }
-    }
+    }*/
     
     //Getters y setters
     public String getNombre() {
