@@ -1,5 +1,11 @@
 package clases;
 
-public abstract class Objeto {
-    protected String nombre;
+public class Objeto {
+    protected TipoObjeto nombre;
+
+    public Objeto(TipoObjeto nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 }
