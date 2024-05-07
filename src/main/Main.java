@@ -10,6 +10,50 @@ public class Main extends FlojerasUtility {
     
     public static void main(String[] args) {
 
+        //Colores para visualizar cada mensaje mejor.
+        
+        final String ROJO = "\u001B[31m";   
+        final String RESET ="\u001B[0m";  
+        final String CYAN ="\u001B[36m";  
+        final String VERDE ="\u001B[32m";
+        final String LINEA="===============================================================================================";
+    
+        final String dado=""
++"                                       _______.\n" +
+"                            ______    | .   . |\\\n" +
+"                           /     /\\   |   .   |.\\\n" +
+"                          /  '  /  \\  | .   . |.'|\n" +
+"                         /_____/. . \\ |_______|.'|\n" +
+"                         \\ . . \\    /  \\ ' .   \\'|\n" +
+"                          \\ . . \\  /    \\____'__\\|\n" +
+"                           \\_____\\/";
+        
+        final String victoria=""
++"             ___________\n" +
+"            '._==_==_=_.'\n" +
+"            .-\\:      /-.\n" +
+"           | (|:.     |) |\n" +
+"            '-|:.     |-'\n" +
+"              \\::.    /\n" +
+"               '::. .'\n" +
+"                 ) (\n" +
+"               _.' '._\n" +
+"              `\"\"\"\"\"\"\"`";
+        
+        final String derrota=""
++ "           ______\n" +
+"        .-\"      \"-.\n" +
+"       /            \\\n" +
+"      |              |\n" +
+"      |,  .-.  .-.  ,|\n" +
+"      | )(__/  \\__)( |\n" +
+"      |/     /\\     \\|\n" +
+"      (_     ^^     _)\n" +
+"       \\__|IIIIII|__/\n" +
+"        | \\IIIIII/ |\n" +
+"        \\          /\n" +
+"         `--------`";
+        
         String titulo="                                                                                                                  \n" +
         "                                             ,----..                                                   ,----..    \n" +
         "    ,---,       ,---,           ,---,       /   /   \\          ,-.----.                  .--.--.      /   /   \\   \n" +
@@ -26,9 +70,9 @@ public class Main extends FlojerasUtility {
         "|   ,.'      `--''          |   ,.'          `---`             |   |.'    :  ,      .-./               `---`      \n" +
         "'---'                       '---'                              `---'       `--`----'                              \n" +
         "                                                                                                                  ";
-        
+              
         //Mínimo recomendado de vidas = 9
-        System.out.println("Bienvenido al Juego del DADO RUSO");
+        System.out.println(VERDE+"Bienvenido al Juego del DADO RUSO"+RESET);
         System.out.println(titulo);
         System.out.println("Dime tu nombre");
         String nom = pedirTexto();
@@ -41,14 +85,16 @@ public class Main extends FlojerasUtility {
             
             int turnj1 = J1.tirarDado();
             int turnbot = bot.tirarDado();
-            System.out.println("Tu dado ha sacado un "+turnj1+" El dado de " + bot.getNombre() + " ha sacado un "+turnbot);
+            System.out.println("");
+            System.out.println(LINEA);            
+            System.out.println(">Tu dado ha sacado un "+turnj1+" El dado de " + bot.getNombre() + " ha sacado un "+turnbot);
             
             if(turnj1>turnbot){     
                 //Turno jugador
-                System.out.println("Has sacado más que el bot, tienes el turno");
+                System.out.println(">Has sacado más que el bot, tienes el turno");
                 
                 if (turnj1>=5 && turnj1<=6) {   
-                    System.out.println("Tu dado ha sido por encima de 4, te ganas un objeto");
+                    System.out.println(">Tu dado ha sido por encima de 4, te ganas un objeto");
                     J1.aniadirObjeto(generarObjeto());
                 }
                 
@@ -72,23 +118,27 @@ public class Main extends FlojerasUtility {
                 J1.dsiminuirVida();
             }
             //Información de la ronda
-            System.out.println("El bot " + bot.getNombre() + " tiene " + bot.getVidas());
-            System.out.println("El jugador " + J1.getNombre() + " tiene " + J1.getVidas());
+            System.out.println(">El bot " + bot.getNombre() + " tiene " + bot.getVidas());
+            System.out.println(">El jugador " + J1.getNombre() + " tiene " + J1.getVidas());
             
             if(J1.getVidas() <= 0 || bot.getVidas() <= 0) {
-                System.out.println("Partida terminada");
+                System.out.println(">Partida terminada");
                 break;
             }
-            System.out.println("Ronda terminada - Presione Enter para pasar a la siguiente");
+            System.out.println(">Ronda terminada - Presione Enter para pasar a la siguiente");
+            System.out.println(LINEA);
+            System.out.println(dado);
             sc.nextLine();
         }
         
         if(J1.getVidas() <= 0){
-            System.out.println("Ha ganado el bot " + bot.getNombre());
+            System.out.println(CYAN+"Ha ganado " + bot.getNombre()+RESET);
+            System.out.println(derrota);
         }
         
         if(bot.getVidas() <= 0){
-            System.out.println("Ha ganado el jugador " + J1.getNombre());
+            System.out.println(CYAN+"Ha ganado el jugador " + J1.getNombre()+RESET);
+            System.out.println(victoria);
         }
     }
     
