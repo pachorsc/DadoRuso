@@ -59,10 +59,7 @@ public class Main extends FlojerasUtility {
                     usarobj(objetoAUsar,J1,bot);
                 } else J1.turno(false);
                 
-                bot.dsiminuirVida();
-                
-                
-                
+                bot.dsiminuirVida();                        
             }else{
                 //Turno bot
                 if (turnj1>=5 && turnj1<=6) {    
@@ -75,7 +72,14 @@ public class Main extends FlojerasUtility {
                 } else bot.turno(false);
                 
                 J1.dsiminuirVida();
-                
+            }
+            //Información de la ronda
+            System.out.println("El bot " + bot.getNombre() + " tiene " + bot.getVidas());
+            System.out.println("El jugador " + J1.getNombre() + " tiene " + J1.getVidas());
+            
+            if(J1.getVidas() <= 0 || bot.getVidas() <= 0) {
+                System.out.println("Partida terminada");
+                break;
             }
             System.out.println("Ronda terminada - Presione Enter para pasar a la siguiente");
             sc.nextLine();
