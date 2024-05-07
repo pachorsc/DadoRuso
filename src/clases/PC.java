@@ -12,13 +12,6 @@ public class PC extends Jugador{
             if(devolverNumEspaciosOcupados(inventario) != 0){               
                 int ale= randomInt(0, super.getInventario().length - 1);
                 
-                for (int i = 0; i < inventario.length; i++) {
-                    System.out.println("Objeto nº" + (i+1) + ": " + inventario[i]);
-                }
-                do{
-                    ale = pedirInt(false);
-                    ale--;
-                }while(ale < 0 || ale > inventario.length);
                 Objeto elegido = inventario[ale];
                 //Elimino el objeto del inventario
                 inventario[ale] = null;
