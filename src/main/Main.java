@@ -104,7 +104,7 @@ public class Main extends FlojerasUtility {
                 } else J1.turno(false);
                 
                 bot.dsiminuirVida();                        
-            }else{
+            }else if (turnj1<turnbot){
                 //Turno bot
                 if (turnj1>=5 && turnj1<=6) {    
                     bot.aniadirObjeto(generarObjeto());
@@ -116,7 +116,7 @@ public class Main extends FlojerasUtility {
                 } else bot.turno(false);
                 
                 J1.dsiminuirVida();
-            }
+            } else System.out.println("Empate");
             //Información de la ronda
             System.out.println(">El bot " + bot.getNombre() + " tiene " + bot.getVidas());
             System.out.println(">El jugador " + J1.getNombre() + " tiene " + J1.getVidas());
