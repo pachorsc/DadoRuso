@@ -56,6 +56,9 @@ public class Main extends FlojerasUtility {
                     J1.turno(true);
                 } else J1.turno(false);
                 
+                
+                
+                
             }else{
                 //Turno bot
                 if (turnj1>=5 && turnj1<=6) {    
@@ -85,5 +88,10 @@ public class Main extends FlojerasUtility {
         }
         
         return o;
+    }
+    public void usarobj(Objeto x, Jugador y){
+        if (x.getNombre() == TipoObjeto.AGUACATE) {
+            y.a
+        }
     }
 }
