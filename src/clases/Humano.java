@@ -22,12 +22,10 @@ public class Humano extends Jugador{
                     if (opcion ==-1) {
                         break;
                     }
-                    
                     opcion--;
-                    
                 }while(opcion < 0 || opcion > inventario.length);
                 
-                if (opcion != -1) {
+                if(opcion != -1){
                     Objeto elegido = inventario[opcion];
 
                     //Elimino el objeto del inventario
@@ -36,7 +34,6 @@ public class Humano extends Jugador{
                     defragmentarArray(inventario);
                     main.Main.objetoAUsar = elegido;  
                 }
-            
             }
         }else{
             System.out.println("El jugador " + nombre + " no tiene objetos para usar.");
