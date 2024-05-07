@@ -28,30 +28,31 @@ public class Main extends FlojerasUtility {
         "                                                                                                                  ";
         
         //Mínimo recomendado de vidas = 9
-        System.out.println("Bienvenido al Juego del  DADO RUSO");
+        System.out.println("Bienvenido al Juego del DADO RUSO");
+        System.out.println(titulo);
         System.out.println("Dime tu nombre");
         String nom = pedirTexto();
-        Humano J1 = new Humano(nom,VIDAS);
+        Humano J1 = new Humano(nom, VIDAS);
         
-        PC bot = new PC("Acolito del aguacate",VIDAS);
+        PC bot = new PC("Acólito del aguacate", VIDAS);
         
         boolean ganar = true;
         while(ganar){
             
             int turnj1 = J1.tirarDado();
             int turnbot = bot.tirarDado();
-            System.out.println("Tu dado ha sacado un "+turnj1+" El dado de " + bot.getNombre() + " ha sacado "+turnbot);
+            System.out.println("Tu dado ha sacado un "+turnj1+" El dado de " + bot.getNombre() + " ha sacado un "+turnbot);
             
             if(turnj1>turnbot){
                 //Turno jugador
-                System.out.println("Has sacado más que el bot, tienes el turno.");
+                System.out.println("Has sacado más que el bot, tienes el turno");
                 
                 if (turnj1>=5 && turnj1<=6) {   
                     System.out.println("Tu dado ha sido por encima de 4, te ganas un objeto");
                     J1.aniadirObjeto(generarObjeto());
                 }
                 
-                if (devolverNumEspaciosOcupados(J1.getInventario()) >0) {
+                if (devolverNumEspaciosOcupados(J1.getInventario()) > 0) {
                     J1.turno(true);
                 } else J1.turno(false);
                 
@@ -61,7 +62,7 @@ public class Main extends FlojerasUtility {
                     bot.aniadirObjeto(generarObjeto());
                 }
                 
-                if (devolverNumEspaciosOcupados(J1.getInventario()) >0) {
+                if (devolverNumEspaciosOcupados(J1.getInventario()) > 0) {
                     bot.turno(true);
                 } else bot.turno(false);
                 
